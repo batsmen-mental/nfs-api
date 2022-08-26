@@ -8,15 +8,7 @@ def hello_world():
     return 'Hello World'
 
 
-@application.route('/user', methods=['GET', 'POST'])
+@application.route('/user', methods=['GET'])
 def view_user():
     if request.method == 'GET':
-        return "Hello, I dont know what your name is"
-    if request.method == 'POST':
-        return json.dumps({'name': request.form['name']})
-
-
-
-@application.route('/user', methods=['POST'])
-def view_user():
-    return json.dumps({'name': request.form['name']})
+        return "Hello, this is a test page."
