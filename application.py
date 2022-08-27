@@ -1,10 +1,12 @@
 from flask import Flask
+from users import users
 application = Flask(__name__)
+
+application.register_blueprint(users, url_prefix="/users")
 
 @application.route('/', methods=['GET'])
 def index():
     return'Hello World'
 
-@application.route('/users', methods=['GET'])
-def user():
-    return ('{"userid":"123","username":"testuser","first_name":"Jim","last_name":"Smith"}',200)
+if __name__ == '__main__':
+    application.run()
