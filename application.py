@@ -6,6 +6,5 @@ def index():
     return'Hello World'
 
 @application.route('/users', methods=['GET'])
-def users():
-    import users
-    users.main()
+def user():
+    return ('{"userid":"123","username":"testuser","first_name":"Jim","last_name":"Smith"}',200)
