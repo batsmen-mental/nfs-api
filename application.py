@@ -7,4 +7,4 @@ def index():
 
 @application.route('/user', methods=['GET'])
 def user():
-    return ('{"userid":"123","username":"testuser","first_name":"Jim","last_name":"Smith"}',200)
+    return ('{"userid":"123","username":"testuser","first_name":"Jim","last_name":"Smith"}',400)
