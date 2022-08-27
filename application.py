@@ -5,6 +5,7 @@ application = Flask(__name__)
 def index():
     return'Hello World'
 
-@application.route('/user', methods=['GET'])
-def user():
-    return ('{"userid":"123","username":"testuser","first_name":"Jim","last_name":"Smith"}',400)
+@application.route('/users', methods=['GET'])
+def users():
+    import users
+    users.main()
