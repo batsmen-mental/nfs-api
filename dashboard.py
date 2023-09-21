@@ -9,7 +9,7 @@ def main_dashboard():
             username = request.args['username']
             try:
                 if "inspector" in username:
-                    response = '{"Week_Starting":"09/19/2023","JobList":[{"ID":1964,"Company":"Oak Hill Hospital"},{"ID":1999,"Company":"On Fire BBQ"}]}'
+                    response = '{"Week_Starting":"09/19/2023","JobList":[{"JobID":1964,"JobDate":"09/19/2023","Company":"Best Hospital"},{"JobID":1999,"JobDate":"09/22/2023","Company":"On Fire BBQ"}]}'
                 return (response, 200)
             except:
                 response = f"Invalid Username. Try one of the following: {valid_username_list}"
