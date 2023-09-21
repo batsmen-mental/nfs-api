@@ -3,10 +3,11 @@ from users import users
 application = Flask(__name__)
 
 application.register_blueprint(users, url_prefix="/users")
+application.register_blueprint(dashboard, url_prefix="/dashboard")
 
 @application.route('/', methods=['GET'])
 def index():
     return'Hello World'
 
 if __name__ == '__main__':
-    application.run(debug=True, port=3999)
+    application.run(debug=True)
