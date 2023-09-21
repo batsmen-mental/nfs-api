@@ -2,7 +2,7 @@ from flask import Blueprint, request
 dashboard = Blueprint("dashboard", __name__)
 
 @dashboard.route('/', methods=['POST', 'GET', 'DELETE'])
-def users_profile():
+def main_dashboard():
     valid_username_list = ['inspector','company','owner','firemarshall']
     if request.method == "GET":
         try:

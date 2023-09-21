@@ -1,5 +1,6 @@
 from flask import Flask
 from users import users
+from dashboard import dashboard
 application = Flask(__name__)
 
 application.register_blueprint(users, url_prefix="/users")
