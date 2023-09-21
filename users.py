@@ -2,6 +2,14 @@ from flask import Blueprint, request
 users = Blueprint("users", __name__)
 
 @users.route('/', methods=['POST', 'GET', 'DELETE'])
+def index():
+    if request.method == "GET":
+        try:
+            username = request.args['username']
+        except:
+            username = "Not Defined Yet"
+        return f"Hello User: {username}"
+'''
 def users_profile():
     if request.method == "POST":
         try:
@@ -84,3 +92,4 @@ def run_query(query):
 def delete_user(username):
     query = "DELETE FROM users where username = '" + username + "';"
     run_query(query)
+'''
