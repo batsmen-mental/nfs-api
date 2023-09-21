@@ -9,4 +9,4 @@ def index():
     return'Hello World'
 
 if __name__ == '__main__':
-    application.run()
+    application.run(debug=True, port=3999)
