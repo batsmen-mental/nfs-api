@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-import mysql.connector
+#import mysql.connector
 test = Blueprint("test", __name__)
 
 @dashboard.route('/', methods=['POST', 'GET', 'DELETE'])
