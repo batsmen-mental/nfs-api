@@ -1,8 +1,9 @@
 from flask import Blueprint, request
-#import mysql.connector
 test = Blueprint("test", __name__)
 
 @dashboard.route('/', methods=['POST', 'GET', 'DELETE'])
+def index()
+    return ("Successful",200)
 '''
 def test_db():
     Host = "nfi-demo-database.c2cn8z8gktfp.us-east-1.rds.amazonaws.com"
