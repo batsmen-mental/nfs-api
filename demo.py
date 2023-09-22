@@ -18,7 +18,8 @@ def main():
     if "SELECT" in query:
         results = mycursor.fetchall()
         mydb.commit()
-        return (results, 500)
+        
+        return (str(results).replace('[','').replace('(','').replace(']','').replace('\'','').replace(' ','').replace(')',''), 500)
     else:
         mydb.commit()
         return ('Successful', 500)
