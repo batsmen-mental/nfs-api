@@ -7,6 +7,7 @@ def main_dashboard():
     if request.method == "GET":
         try:
             #userid = request.args['userid']
+            userid = 1
             demodata = request.args['demodata']
             try:
                 if demodata:
