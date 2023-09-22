@@ -3,6 +3,7 @@ import mysql.connector
 test = Blueprint("test", __name__)
 
 @dashboard.route('/', methods=['POST', 'GET', 'DELETE'])
+'''
 def test_db():
     Host = "nfi-demo-database.c2cn8z8gktfp.us-east-1.rds.amazonaws.com"
     Port = 3306
@@ -19,3 +20,4 @@ def test_db():
     mydb.close()
     # return (str(results).replace('[','').replace('(','').replace(']','').replace('\'','').replace(' ','').replace(')',''),200)
     return (str(results),200)
+'''
