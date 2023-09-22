@@ -162,3 +162,4 @@ cython_debug/
 #Others
 @eaDir
 .DS_Store
+.git_credentials
