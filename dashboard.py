@@ -15,6 +15,9 @@ def main_dashboard():
                 elif userid is not None:
                     response = 'No Demo Data'
                     return (response, 200)
+                else:
+                    response = 'No Demo or no User Data'
+                    return (response, 200)
             except:
                 response = f"Invalid UserID."
                 return (response, 500)
