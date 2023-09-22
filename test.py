@@ -1,7 +1,7 @@
 from flask import Blueprint, request
 test = Blueprint("test", __name__)
 
-@dashboard.route('/', methods=['POST', 'GET', 'DELETE'])
+@dashboard.route('/', methods=['GET')
 def index()
     return ("Successful",200)
 '''

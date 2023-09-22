@@ -1,7 +1,7 @@
 from flask import Flask
 from users import users
-from test import test
 from dashboard import dashboard
+from test import test
 application = Flask(__name__)
 
 application.register_blueprint(users, url_prefix="/users")
