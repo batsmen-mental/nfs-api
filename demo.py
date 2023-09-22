@@ -13,13 +13,14 @@ def main():
     query = "SELECT * FROM company"
     mydb = mysql.connector.connect(host=Host, user=User, port=Port, password=Password, database=database,
                                    charset='utf8')
-    mycursor = mydb.cursor(buffered=True)
+    mycursor = mydb.cursor(buffered=True, dictionary=True)
     mycursor.execute(query)
     if "SELECT" in query:
         results = mycursor.fetchall()
         mydb.commit()
-        
-        return (str(results).replace('[','').replace('(','').replace(']','').replace('\'','').replace(' ','').replace(')',''), 500)
+
+        # return (str(results).replace('[','').replace('(','').replace(']','').replace('\'','').replace(' ','').replace(')',''), 500)
+        return (results, 500)
     else:
         mydb.commit()
         return ('Successful', 500)
