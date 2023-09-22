@@ -6,7 +6,7 @@ def main_dashboard():
     valid_username_list = ['inspector','company','owner','firemarshall']
     if request.method == "GET":
         try:
-            userid = request.args['userid']
+            #userid = request.args['userid']
             demodata = request.args['demodata']
             try:
                 if demodata:
