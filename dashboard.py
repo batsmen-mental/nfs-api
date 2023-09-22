@@ -1,4 +1,5 @@
 from flask import Blueprint, request
+from demo import query_db
 import mysql.connector
 dashboard = Blueprint("dashboard", __name__)
 
@@ -28,26 +29,3 @@ def main_dashboard():
             return (response, 500)
     else:
         return ('<h2>ERROR. You must submit using "GET"<h2>', 500)
-
-def query_db(query):
-    Host = "nfi-demo-database.c2cn8z8gktfp.us-east-1.rds.amazonaws.com"
-    Port = 3306
-    User = "admin"
-    Password = "nfiadminpwd1!"
-    database = "demodb"
-    inspector_id = 1
-    query = f"SELECT i.inspection_id, i.start_date, c.name  from inspections i, customer c  where i.customer_id = c.customer_id  AND inspector_id = {int(inspector_id)} and DATE_ADD(start_date , INTERVAL(-WEEKDAY(start_date)) DAY) = DATE_ADD(CURDATE() , INTERVAL(-WEEKDAY(CURDATE())) DAY);"
-    mydb = mysql.connector.connect(host=Host, user=User, port=Port, password=Password, database=database,
-                                   charset='utf8')
-    mycursor = mydb.cursor(buffered=True, dictionary=True)
-    mycursor.execute(query)
-    if "SELECT" in query:
-        results = mycursor.fetchall()
-        mydb.commit()
-
-        # return (str(results).replace('[','').replace('(','').replace(']','').replace('\'','').replace(' ','').replace(')',''), 500)
-        return (results, 500)
-    else:
-        mydb.commit()
-        return ('Successful', 500)
-    mydb.close()
