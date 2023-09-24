@@ -22,7 +22,7 @@ def main_dashboard():
                     response = query_db(query)
                     return (response, 200)
                 else:
-                    response = 'No Demo or no User Data'
+                    response = 'No Demo or no User Data. Please get some help'
                     return (response, 200)
             except:
                 response = f"Invalid UserID."
