@@ -3,7 +3,7 @@ from db_actions import query_db
 from datetime import date, timedelta
 dashboard = Blueprint("dashboard", __name__)
 
-@dashboard.route('/', methods=['POST', 'GET', 'DELETE'])
+@dashboard.route('/details', methods=['POST', 'GET', 'DELETE'])
 def main_dashboard():
     today = date.today()
     start = today - timedelta(days=today.weekday())
