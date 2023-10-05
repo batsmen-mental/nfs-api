@@ -14,7 +14,7 @@ application.register_blueprint(customer, url_prefix="/customer")
 def index():
     return'Hello World'
 
-@app.route('/admin')
+@application.route('/admin')
 def hello():
     return render_template('index.html')
 
