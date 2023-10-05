@@ -19,7 +19,7 @@ def add_company():
             website = request.form.get('website','')
 
             if None in (name, address, city, state, zip, county, phone):
-
+                return(f"One or more required fields are missing (name,address,city,state,zip,county,phone)",428)
 
             try:
                 query = f"INSERT into company (name,address,address2,city,state,zip,county,phone,phone2,fax,website) VALUES('{name}','{address}','{address2}','{city}','{state}','{zip}','{county}','{phone}','{phone2}','{fax}','{website}');"
