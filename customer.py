@@ -1,9 +1,9 @@
 from flask import Blueprint, request
 from db_actions import query_db
-company = Blueprint("company", __name__)
+customer = Blueprint("customer", __name__)
 
-@company.route('/add', methods=['POST', 'GET', 'DELETE'])
-def add_company():
+@customer.route('/add', methods=['POST', 'GET', 'DELETE'])
+def add_customer():
     if request.method == "POST":
         try:
             name = request.form.get('name',None)
@@ -23,7 +23,7 @@ def add_company():
                 return(f"One or more required parameters are missing (name,address,city,state,zip,county,phone)",428)
 
             try:
-                query = f"INSERT into company (name,address,address2,city,state,zip,county,phone,phone2,fax,website) VALUES('{name}','{address}','{address2}','{city}','{state}','{zip}','{county}','{phone}','{phone2}','{fax}','{website}');"
+                query = f"INSERT into customer (name,address,address2,city,state,zip,county,phone,phone2,fax,website) VALUES('{name}','{address}','{address2}','{city}','{state}','{zip}','{county}','{phone}','{phone2}','{fax}','{website}');"
                 response = query_db(query)
                 return (response)
             except:
