@@ -23,7 +23,7 @@ def add_company():
                 return(f"One or more required parameters are missing (name,address,city,state,zip,county,phone)",428)
 
             try:
-                query = f"INSERT into company2 (name,address,address2,city,state,zip,county,phone,phone2,fax,website) VALUES('{name}','{address}','{address2}','{city}','{state}','{zip}','{county}','{phone}','{phone2}','{fax}','{website}');"
+                query = f"INSERT into company (name,address,address2,city,state,zip,county,phone,phone2,fax,website) VALUES('{name}','{address}','{address2}','{city}','{state}','{zip}','{county}','{phone}','{phone2}','{fax}','{website}');"
                 response = query_db(query)
                 return (response)
             except:
