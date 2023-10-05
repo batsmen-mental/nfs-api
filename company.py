@@ -18,13 +18,14 @@ def add_company():
             fax = request.form.get('fax','')
             website = request.form.get('website','')
 
+            #Return error is missing mandatory fields
             if None in (name, address, city, state, zip, county, phone):
-                return(f"One or more required fields are missing (name,address,city,state,zip,county,phone)",428)
+                return(f"One or more required parameters are missing (name,address,city,state,zip,county,phone)",428)
 
             try:
                 query = f"INSERT into company (name,address,address2,city,state,zip,county,phone,phone2,fax,website) VALUES('{name}','{address}','{address2}','{city}','{state}','{zip}','{county}','{phone}','{phone2}','{fax}','{website}');"
                 response = query_db(query)
-                return (response, 200)
+                return (response)
             except:
                 response = f"Invalid UserID."
                 return (response, 500)

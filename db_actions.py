@@ -13,8 +13,12 @@ def query_db(query):
     mycursor = mydb.cursor(buffered=True, dictionary=True)
     mycursor.execute(query)
     if "SELECT" in query:
-        results = mycursor.fetchall()
-        mydb.commit()
+        try:
+            results = mycursor.fetchall()
+            mydb.commit()
+            return (f"Successful", 200)
+        except Exception as e:
+            return (f"Error: {e}",417)
         # return (str(results).replace('[','').replace('(','').replace(']','').replace('\'','').replace(' ','').replace(')',''), 500)
         return results
     else:
