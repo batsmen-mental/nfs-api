@@ -18,6 +18,7 @@ def query_db(query):
         # return (str(results).replace('[','').replace('(','').replace(']','').replace('\'','').replace(' ','').replace(')',''), 500)
         return results
     else:
-        results = mydb.commit()
+        mydb.commit()
+        results = f"Successful"
         return results
     mydb.close()
