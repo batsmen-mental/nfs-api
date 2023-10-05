@@ -4,6 +4,6 @@ webpages = Blueprint("webpages", __name__)
 
 @webpages.route('/add_customer', methods=['POST', 'GET', 'DELETE'])
 def main():
-    query = f"SELECT * FROM customers;"
+    query = f"SELECT * FROM customer;"
     response = query_db(query)
     return render_template('webpages/add_customer.html', results=response)
