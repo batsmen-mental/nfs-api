@@ -2,7 +2,7 @@ from flask import Blueprint, request
 from db_actions import query_db
 company = Blueprint("company", __name__)
 
-@company.route('/add', methods=['POST', 'GET', 'DELETE'])
+@company.route('/add', methods=['POST'])
 def add_company():
     if request.method == "POST":
         try:
