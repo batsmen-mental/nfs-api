@@ -18,9 +18,7 @@ def add_company():
             fax = request.form.get('fax',None)
             website = request.form.get('website',None)
             try:
-                print(f"name: {name}")
-                return(f"name: {name}", 200)
-                query = f"SELECT i.starting_week, i.inspection_id, i.start_date, c.name  from inspections i, customer c  where i.customer_id = c.customer_id  AND inspector_id = {userid} and starting_week = '{starting_week}';"
+                query = f"INSERT into company (name,address,address2,city,state,zip,county,phone,phone2,fax,website) VALUES('{name}','{address}','{address2}','{city}','{state}','{zip}','{county}','{phone}','{phone2}','{fax}','{website}');"
                 response = query_db(query)
                 return (response, 200)
             except:
