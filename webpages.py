@@ -3,4 +3,4 @@ webpages = Blueprint("webpages", __name__)
 
 @webpages.route('/add_customer', methods=['POST', 'GET', 'DELETE'])
 def main():
-    return render_template('webpages/index.html')
+    return render_template('webpages/add_customer.html')
