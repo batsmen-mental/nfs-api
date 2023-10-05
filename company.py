@@ -27,8 +27,8 @@ def add_company():
                 response = query_db(query)
                 return (response)
             except:
-                response = f"Invalid UserID."
-                return (response, 500)
+                response = f"Database Error."
+                return (response, 520)
         except Exception as e:
             response = "Error: " + str(e)
             return (response, 500)
