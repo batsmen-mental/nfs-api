@@ -18,7 +18,7 @@
     <tbody>
         {% for row in results %} <-- Using these '{%' and '%}' we can write our python code -->
             <tr>
-                <td>{{row}}</td>
+                <td>{{row.name}}</td>
             </tr>
         {% endfor %}        <-- Because it is flask framework there would be other keywords like 'endfor'   -->
     </tbody>
