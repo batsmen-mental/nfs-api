@@ -16,19 +16,33 @@
 <table>
   <thead>
     <tr>
-        <th>vehicle ID</th>
-        <th>current timestamp</th>
-        <th>expiry timestamp</th>
-        <th>expiry timestamp</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Address 2</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+        <th>County</th>
+        <th>Primary Phone</th>
+        <th>Secondary Phone</th>
+        <th>Fax</th>
+        <th>Website</th>
     </tr>
     </thead>
     <tbody>
      {% for row in response %}
             <tr>
                 <td>{{row.name}}</td>
-                <td>{{row[1]}}</td>
-                <td>{{row[2]}}</td>
-                <td>{{row[3]}}</td>
+                <td>{{row.address}}</td>
+                <td>{{row.address2}}</td>
+                <td>{{row.city}}</td>
+                <td>{{row.state}}</td>
+                <td>{{row.zip}}</td>
+                <td>{{row.county}}</td>
+                <td>{{row.phone}}</td>
+                <td>{{row.phone2}}</td>
+                <td>{{row.fax}}</td>
+                <td>{{row.website}}</td>
             </tr>
         {% endfor %}
     </tbody>
