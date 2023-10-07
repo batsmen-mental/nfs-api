@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title>Add Customers</title>
+ <title>Add Company</title>
 <style>
-#customer {
+#company {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
-#customer td, #customer th {
+#company td, #company th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-#customer tr:nth-child(even){background-color: #f2f2f2;}
+#company tr:nth-child(even){background-color: #f2f2f2;}
 
-#customer tr:hover {background-color: #ddd;}
+#company tr:hover {background-color: #ddd;}
 
-#customer th {
+#company th {
   padding-top: 2px;
   padding-bottom: 2px;
   text-align: left;
@@ -28,7 +28,7 @@
 </style>
 </head>
 <body>
-<table id="customer">
+<table id="company">
   <thead>
     <tr>
         <th>ID</th>
@@ -48,7 +48,7 @@
     <tbody>
      {% for row in response %}
             <tr>
-                <td>{{row.customer_id}}</td>
+                <td>{{row.company_id}}</td>
                 <td>{{row.name}}</td>
                 <td>{{row.address}}</td>
                 <td>{{row.address2}}</td>
@@ -65,7 +65,7 @@
     </tbody>
 </table>
 <p></p>
-<form id="formoid" action="http://nfi-api-service-env.eba-znq2rk6c.us-east-1.elasticbeanstalk.com/customer/add" title="" method="post">
+<form id="formoid" action="http://nfi-api-service-env.eba-znq2rk6c.us-east-1.elasticbeanstalk.com/company/add" title="" method="post">
     <div>
         <label>Name</label>
         <input type="text" id="name" name="name" >
