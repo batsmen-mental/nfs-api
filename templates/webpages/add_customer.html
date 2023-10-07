@@ -62,7 +62,7 @@
         {% endfor %}
     </tbody>
 </table>
-
+name,address,city,state,zip,county,phone
 <form id="formoid" action="http://nfi-api-service-env.eba-znq2rk6c.us-east-1.elasticbeanstalk.com/customer/add" title="" method="post">
     <div>
         <label>Name</label>
@@ -73,6 +73,26 @@
         <input type="text" id="address" name="address" >
     </div>
     <div>
+        <label>City</label>
+        <input type="text" id="city" name="city" >
+    </div>
+    <div>
+        <label>State</label>
+        <input type="text" id="state" name="state" >
+    </div>
+    <div>
+        <div>
+        <label>Zip</label>
+        <input type="text" id="zip" name="zip" >
+    </div>
+    <div>
+        <label>County</label>
+        <input type="text" id="county" name="county" >
+    </div>
+        <div>
+        <label>Phone</label>
+        <input type="text" id="phone" name="phone" >
+    </div>
         <input type="submit" id="submitButton"  name="submitButton" value="Submit">
     </div>
 </form>
