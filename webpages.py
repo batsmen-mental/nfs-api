@@ -10,6 +10,6 @@ def add_customer():
 
 @webpages.route('/add_company', methods=['POST', 'GET', 'DELETE'])
 def add_company():
-    query = f"SELECT * FROM customer;"
+    query = f"SELECT * FROM company;"
     response = query_db(query)
     return render_template('webpages/add_company.html', response=response)
