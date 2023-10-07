@@ -2,6 +2,10 @@ from flask import Blueprint, request, render_template
 from db_actions import query_db
 webpages = Blueprint("webpages", __name__)
 
+@webpages.route('/admin_main', methods=['POST', 'GET', 'DELETE'])
+def main():
+    return render_template('webpages/admin_main.html')
+
 @webpages.route('/add_customer', methods=['POST', 'GET', 'DELETE'])
 def add_customer():
     query = f"SELECT * FROM customer;"
