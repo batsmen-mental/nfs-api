@@ -10,5 +10,4 @@ def main():
     #        { "News" : "DEF", "Link" : "http://exampledef.com", "Date": "02/03/20" },
     #        { "News" : "GHI", "Link" : "http://exampleghi.com", "Date": "03/03/20" }]
     # return (response, 200)
-    # return render_template('webpages/add_customer.html', results=response)
-    return render_template('webpages/add_customer.html')
+    return render_template('webpages/add_customer.html', response=response)
