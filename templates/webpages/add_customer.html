@@ -31,6 +31,7 @@
 <table id="customers">
   <thead>
     <tr>
+        <th>ID</th>
         <th>Name</th>
         <th>Address</th>
         <th>Address 2</th>
@@ -47,6 +48,7 @@
     <tbody>
      {% for row in response %}
             <tr>
+                <td>{{row.id}}</td>
                 <td>{{row.name}}</td>
                 <td>{{row.address}}</td>
                 <td>{{row.address2}}</td>

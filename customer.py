@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, redirect
 from db_actions import query_db
 customer = Blueprint("customer", __name__)
 
@@ -25,7 +25,11 @@ def add_customer():
             try:
                 query = f"INSERT into customer (name,address,address2,city,state,zip,county,phone,phone2,fax,website) VALUES('{name}','{address}','{address2}','{city}','{state}','{zip}','{county}','{phone}','{phone2}','{fax}','{website}');"
                 response = query_db(query)
-                return (request.referrer or response,200)
+                try:
+                    if request.referrer:
+                        return redirect (request.referrer)
+                except:
+                    return (response,200)
             except:
                 response = f"Database Error."
                 return (response, 520)
