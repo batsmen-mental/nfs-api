@@ -25,7 +25,7 @@ def add_customer():
             try:
                 query = f"INSERT into customer (name,address,address2,city,state,zip,county,phone,phone2,fax,website) VALUES('{name}','{address}','{address2}','{city}','{state}','{zip}','{county}','{phone}','{phone2}','{fax}','{website}');"
                 response = query_db(query)
-                return (response,200)
+                return (request.referrer or response,200)
             except:
                 response = f"Database Error."
                 return (response, 520)
