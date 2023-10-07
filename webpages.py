@@ -6,5 +6,5 @@ webpages = Blueprint("webpages", __name__)
 def main():
     query = f"SELECT * FROM customer;"
     response = query_db(query)
-    return (response, 200)
-    # return render_template('webpages/add_customer.html', results=response)
+    # return (response, 200)
+    return render_template('webpages/add_customer.html', results=[Item(i) for i in response])
