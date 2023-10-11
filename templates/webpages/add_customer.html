@@ -68,33 +68,37 @@
 <p></p>
 <form id="formoid" action="http://nfi-api-service-env.eba-znq2rk6c.us-east-1.elasticbeanstalk.com/customer/add" title="" method="post">
     <div>
-        <label>Name</label>
-        <input type="text" id="name" name="name" >
+        <label>Name<font color="red">*</font></label>
+        <input type="text" id="name" name="name" required>
     </div>
     <div>
-        <label>Address</label>
-        <input type="text" id="address" name="address" >
+        <label>Address <font color="red">*</font></label>
+        <input type="text" id="address" name="address" required>
     </div>
     <div>
-        <label>City</label>
-        <input type="text" id="city" name="city" >
+        <label>Address 2</label>
+        <input type="text" id="address2" name="address2" >
     </div>
     <div>
-        <label>State</label>
-        <input type="text" id="state" name="state" >
+        <label>City <font color="red">*</font></label>
+        <input type="text" id="city" name="city" required>
+    </div>
+    <div>
+        <label>State <font color="red">*</font></label>
+        <input type="text" id="state" name="state" required>
     </div>
     <div>
         <div>
-        <label>Zip</label>
-        <input type="text" id="zip" name="zip" >
+        <label>Zip <font color="red">*</font></label>
+        <input type="text" id="zip" name="zip" required>
     </div>
     <div>
-        <label>County</label>
-        <input type="text" id="county" name="county" >
+        <label>County <font color="red">*</font></label>
+        <input type="text" id="county" name="county" required>
     </div>
         <div>
-        <label>Phone</label>
-        <input type="text" id="phone" name="phone" >
+        <label>Phone <font color="red">*</font></label>
+        <input type="text" id="phone" name="phone" required>
     </div>
         <div>
         <div>
