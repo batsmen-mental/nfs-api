@@ -64,9 +64,9 @@ def get_customer():
             query_time = "1.032224"
             data = response
             errors = ""
-            formatted_json_response = "{\"status_code\": " + status_code + ",\"body\": {\"meta\": \"query_time\": " + query_time + "},\"data\": \"" + data + "\",\"errors\": \"" + errors + "\"}}"
+            # formatted_json_response = "{\"status_code\": " + status_code + ",\"body\": {\"meta\": \"query_time\": " + query_time + "},\"data\": \"" + data + "\",\"errors\": \"" + errors + "\"}}"
 
-            return (formatted_json_response, 200)
+            return (response, 200)
         except:
             response = f"Database Error. {formatted_json_response}"
             return (response, 520)
