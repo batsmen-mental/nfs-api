@@ -30,7 +30,7 @@ def add_customer():
                     if request.referrer:
                         return redirect (request.referrer)
                 except:
-                    return (format_json_response(200,1.03254747,response,[]), 200)
+                    return (response,200)
             except:
                 response = f"Database Error."
                 return (response, 520)
@@ -56,7 +56,7 @@ def get_customer():
                     return redirect (request.referrer)
             except:
                 return (response,200)
-            return (response, 200)
+            return (format_json_response(200,1.03254747,response,[]), 200)
         except:
             response = f"Database Error."
             return (response, 520)
