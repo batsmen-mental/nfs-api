@@ -48,7 +48,7 @@ def get_customer():
             response = f"Invalid parmeter. Please pass a 'customer_id' parameter"
             return (response, 520)
         try:
-            query = f"SELECT * customer WHERE customer_id = {customer_id}"
+            query = f"SELECT * customer WHERE customer_id = {customer_id};"
             response = query_db(query)
             try:
                 if request.referrer:
