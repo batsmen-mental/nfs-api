@@ -1,7 +1,10 @@
 from flask import Blueprint, request, redirect
 from db_actions import query_db
-from config import format_json_response
 customer = Blueprint("customer", __name__)
+
+def format_json_response(status_code, query_time, data, errors):
+    formatted_json_response = "{\"status_code\": " + status_code + ",\"body\": {\"meta\": \"query_time\": " + query_time + "},\"data\": \"" + data + "\",\"errors\": \"" + errors + "\"}}"
+    return formatted_json_response
 
 @customer.route('/add', methods=['POST'])
 def add_customer():
@@ -56,9 +59,16 @@ def get_customer():
                     return redirect (request.referrer)
             except:
                 return (response,200)
-            return (format_json_response(200,1.03254747,response,""), 200)
+
+            status_code = 200
+            query_time = 1.032224
+            data = response
+            errors = ""
+            formatted_json_response = "{\"status_code\": " + status_code + ",\"body\": {\"meta\": \"query_time\": " + query_time + "},\"data\": \"" + data + "\",\"errors\": \"" + errors + "\"}}"
+
+            return (formatted_json_response, 200)
         except:
-            response = f"Database Error."
+            response = f"Database Error. {formatted_json_response}"
             return (response, 520)
     else:
         return ('<h2>ERROR. You must submit using "GET"<h2>', 500)
