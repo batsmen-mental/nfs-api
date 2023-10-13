@@ -39,6 +39,7 @@ def add_customer():
     else:
         return ('<h2>ERROR. You must submit using "POST"<h2>', 500)
 
+@customer.route('/get', methods=['GET'])
 def get_customer():
     if request.method == "GET":
         try:
