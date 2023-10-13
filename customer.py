@@ -38,3 +38,28 @@ def add_customer():
             return (response, 520)
     else:
         return ('<h2>ERROR. You must submit using "POST"<h2>', 500)
+
+def get_customer():
+    if request.method == "GET":
+        try:
+            customer_id = request.args['customer_id']
+        except:
+            response = f"Invalid parmeter. Please pass a 'customer_id' parameter"
+            return (response, 520)
+        try:
+            query = f"SELECT * customer WHERE customer_id = {customer_id}"
+            response = query_db(query)
+            try:
+                if request.referrer:
+                    return redirect (request.referrer)
+            except:
+                return (response,200)
+            return (response, 200)
+        except:
+            response = f"Database Error."
+            return (response, 520)
+        except Exception as e:
+            response = f"Error: {str(e)}"
+            return (response, 520)
+    else:
+        return ('<h2>ERROR. You must submit using "POST"<h2>', 500)
