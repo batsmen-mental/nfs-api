@@ -60,4 +60,4 @@ def get_customer():
             response = f"Database Error."
             return (response, 520)
     else:
-        return ('<h2>ERROR. You must submit using "POST"<h2>', 500)
+        return ('<h2>ERROR. You must submit using "GET"<h2>', 500)
