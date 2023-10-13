@@ -1,5 +1,6 @@
 from flask import Blueprint, request, redirect
 from db_actions import query_db
+from config import format_json_response
 customer = Blueprint("customer", __name__)
 
 @customer.route('/add', methods=['POST'])
@@ -29,7 +30,7 @@ def add_customer():
                     if request.referrer:
                         return redirect (request.referrer)
                 except:
-                    return (response,200)
+                    return (format_json_response(200,1.03254747,response,[]) response,200)
             except:
                 response = f"Database Error."
                 return (response, 520)
