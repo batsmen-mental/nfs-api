@@ -59,8 +59,5 @@ def get_customer():
         except:
             response = f"Database Error."
             return (response, 520)
-        except Exception as e:
-            response = f"Error: {str(e)}"
-            return (response, 520)
     else:
         return ('<h2>ERROR. You must submit using "POST"<h2>', 500)
