@@ -61,7 +61,7 @@ def get_customer():
                 return (response,200)
 
             status_code = 200
-            query_time = 1.032224
+            query_time = "1.032224"
             data = response
             errors = ""
             formatted_json_response = "{\"status_code\": " + status_code + ",\"body\": {\"meta\": \"query_time\": " + query_time + "},\"data\": \"" + data + "\",\"errors\": \"" + errors + "\"}}"
